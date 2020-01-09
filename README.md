@@ -8,3 +8,9 @@ $npm init
 
 ## dependency 
 $  npm i expresss mongoose body-parser --save
+
+## connect mongoDB from server
+$ node db.js //after file db.js file
+
+## to avoid rerun db.js after update for connection, install nodemon package
+$ npm install -g nodemon (https://www.npmjs.com/package/nodemon)//globally in system
