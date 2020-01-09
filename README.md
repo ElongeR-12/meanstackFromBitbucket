@@ -14,3 +14,10 @@ $ node db.js //after file db.js file
 
 ## to avoid rerun db.js after update for connection, install nodemon package
 $ npm install -g nodemon (https://www.npmjs.com/package/nodemon)//globally in system
+
+## create rule javascript file (index.js)
+
+## implement CRUD operation insert (insert, update, delete, read or view)
+by default mongoose will insert the new record into a collection with named employees
+as per model 
+whithout managed mongodb tools
