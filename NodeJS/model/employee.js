@@ -7,7 +7,7 @@ var Employee = mongoose.model('Employee', {
     position: { type: String },
     office: { type: String },
     salary: { type: Number }
-},);
+});
 
 // we have to export this employee
 module.exports = { Employee };
