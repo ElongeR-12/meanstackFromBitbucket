@@ -34,13 +34,13 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value._id == "") {
+    // if (form.value._id == "") { 
       this.employeeService.postEmployee(form.value).subscribe((res) => {//insert new employee into mongoDB
         this.resetForm(form);
         // this.refreshEmployeeList();
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
       });
-    }
+    // }
     // else {
     //   this.employeeService.putEmployee(form.value).subscribe((res) => {
     //     this.resetForm(form);
@@ -58,4 +58,10 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.employees = res as Employee[];// in res parameter we will have an array of record from this employees collection 
     });
   }
+
+  //bind to edit button
+  onEdit(emp: Employee) {
+    this.employeeService.selectedEmployee = emp;//set the employee object into the selected property of employee service class
+  }//so that it will update this form with selected employee content
+
 }
