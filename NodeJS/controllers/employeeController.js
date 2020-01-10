@@ -62,6 +62,17 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// route for delete
+router.delete('/:id', (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+    Employee.findByIdAndRemove(req.params.id, (err, doc) => {
+        if (!err) { res.send(doc); }
+        else { console.log('Error in Employee Delete :' + JSON.stringify(err, undefined, 2)); }
+    });
+});
+
 
 //configure routes inside route file index.js
 module.exports = router;

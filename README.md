@@ -29,3 +29,5 @@ whithout managed mongodb tools
 ## more get request to return a specific empoyee with _ID
 
 ## more routes for update operation
+
+## more routes for delete operation
