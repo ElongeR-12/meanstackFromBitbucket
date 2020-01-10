@@ -21,3 +21,7 @@ $ npm install -g nodemon (https://www.npmjs.com/package/nodemon)//globally in sy
 by default mongoose will insert the new record into a collection with named employees
 as per model 
 whithout managed mongodb tools
+## ## implement CRUD operation insert 
+    implement actual crud operation inside update delete and retrieve(controllers)
+
+## insert new employee record into the DB collection
