@@ -34,3 +34,9 @@ whithout managed mongodb tools
 
 ## generate class model 
 $ ng g class employee --type=model
+
+## doc 
+    ## materialize css (https://materializecss.com/getting-started.html)
+
+## enable cors
+ it enable request from one web application(angular project, port: 4200) to another web aplication (node.js project, port:3000)
