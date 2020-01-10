@@ -2,6 +2,9 @@
 const express = require('express');
 var router = express.Router();
 
+//import ObjectId from mongoose
+var ObjectId = require('mongoose').Types.ObjectId;
+
 // work with mongoose model employee
 //so that require statement for this employee model
 var { Employee } = require('../model/employee');
@@ -12,6 +15,17 @@ router.get('/', (req, res) => {
     Employee.find((err, docs) => {//retrieve all the employees from this employees collection
         if (!err) { res.send(docs); }
         else { console.log('Error in Retriving Employees :' + JSON.stringify(err, undefined, 2)); }
+    });
+});
+
+// to retrieve salary by its ID
+router.get('/:id', (req, res) => {
+    if (!ObjectId.isValid(req.params.id))// ID pass through the array should be a value MongoDB ID
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+    Employee.findById(req.params.id, (err, doc) => {// retrieve employee from mongodb
+        if (!err) { res.send(doc); }
+        else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -28,6 +42,7 @@ router.post('/', (req, res) => {
         else { console.log('Error in Employee Save :' + JSON.stringify(err, undefined, 2)); }
     });
 });
+
 
 
 //configure routes inside route file index.js

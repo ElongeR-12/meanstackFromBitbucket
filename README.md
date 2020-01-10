@@ -24,4 +24,6 @@ whithout managed mongodb tools
 ## ## implement CRUD operation insert 
     implement actual crud operation inside update delete and retrieve(controllers)
 
-## insert new employee record into the DB collection
+## insert new employee record into the DB collection (post())
+
+## more get request to return a specific empoyee with _ID
