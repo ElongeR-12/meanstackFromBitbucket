@@ -34,20 +34,20 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    // if (form.value._id == "") { 
+    if (form.value._id == "") {//if _id is empty string we will do the insert operation 
       this.employeeService.postEmployee(form.value).subscribe((res) => {//insert new employee into mongoDB
         this.resetForm(form);
-        // this.refreshEmployeeList();
+         this.refreshEmployeeList();//after insert operation we have to refreash these employee list on tab angular application
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
       });
-    // }
-    // else {
-    //   this.employeeService.putEmployee(form.value).subscribe((res) => {
-    //     this.resetForm(form);
-    //     this.refreshEmployeeList();
-    //     M.toast({ html: 'Updated successfully', classes: 'rounded' });
-    //   });
-    // }
+    }
+    else {// we have to update operation
+      this.employeeService.putEmployee(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshEmployeeList();//after update operation we have to refreash these employee list on tab angular application
+        M.toast({ html: 'Updated successfully', classes: 'rounded' });
+      });
+    }
 
     
   }

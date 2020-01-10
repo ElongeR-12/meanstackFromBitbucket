@@ -24,4 +24,9 @@ export class EmployeeService {
     return this.http.get(this.baseURL);//a get request from router get in node.js, return all employees from employees collection
   }
 
+  //consume put route from nodejs project
+  putEmployee(emp: Employee) {
+    return this.http.put(this.baseURL + `/${emp._id}`, emp);
+  }
+
 }
