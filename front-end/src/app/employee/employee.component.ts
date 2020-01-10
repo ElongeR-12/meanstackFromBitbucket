@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../shared/employee.service';
 import { NgForm } from '@angular/forms';
+import { Employee } from '../shared/employee.model';
 declare var M: any;//to show a toast notification (https://materializecss.com/toasts.html)
 
 @Component({
@@ -16,7 +17,7 @@ export class EmployeeComponent implements OnInit {
 //ngOnInit lifecycle hook will be invoked whenever this component is fully loaded
   ngOnInit() {
     this.resetForm();
-    // this.refreshEmployeeList();
+    this.refreshEmployeeList();
   }
 
   //form preset operation
@@ -48,10 +49,13 @@ export class EmployeeComponent implements OnInit {
     //   });
     // }
 
-    // refreshEmployeeList() {
-    //   this.employeeService.getEmployeeList().subscribe((res) => {
-    //     this.employeeService.employees = res as Employee[];
-    //   });
-    // }
+    
+  }
+
+  //fetch all employee records from this employees collection
+  refreshEmployeeList() {
+    this.employeeService.getEmployeeList().subscribe((res) => {// return an observale getEmployeeList from service, so we can suscribe it
+      this.employeeService.employees = res as Employee[];// in res parameter we will have an array of record from this employees collection 
+    });
   }
 }

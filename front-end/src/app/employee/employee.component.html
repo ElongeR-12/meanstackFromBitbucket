@@ -57,7 +57,8 @@
                   <th></th>
                 </tr>
               </thead>
-              <tr *ngFor="let emp of employeeService.employees">
+              <!--employee array defined in employeeService already injected in employeeComponent -->
+              <tr *ngFor="let emp of employeeService.employees"><!--employees collection array from employeeServiceClass so we can define new function inside this service-->
                 <td>{{emp.name}}</td>
                 <td>{{emp.position}}</td>
                 <td>{{emp.office}}</td>

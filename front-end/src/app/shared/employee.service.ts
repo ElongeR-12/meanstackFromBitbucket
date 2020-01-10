@@ -18,4 +18,10 @@ export class EmployeeService {
   postEmployee(emp: Employee) {
     return this.http.post(this.baseURL, emp);//post request into the node.js project
   }
+
+// to get new employee latest posted in db collection at the same time of posting new inserted employee
+  getEmployeeList() {
+    return this.http.get(this.baseURL);//a get request from router get in node.js, return all employees from employees collection
+  }
+
 }
