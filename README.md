@@ -31,3 +31,6 @@ whithout managed mongodb tools
 ## more routes for update operation
 
 ## more routes for delete operation
+
+## generate class model 
+$ ng g class employee --type=model
