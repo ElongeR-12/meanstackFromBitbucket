@@ -44,6 +44,24 @@ router.post('/', (req, res) => {
 });
 
 
+// route for update
+router.put('/:id', (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+    var emp = { //create an object like this, a normal object not a model
+        name: req.body.name,
+        position: req.body.position,
+        office: req.body.office,
+        salary: req.body.salary,
+    };
+    Employee.findByIdAndUpdate(req.params.id, { $set: emp }, { new: true }, (err, doc) => {//with new option we test the mongodb wether 
+        if (!err) { res.send(doc); }                                                       //we want to return all data of employee or updated data back to the response
+        else { console.log('Error in Employee Update :' + JSON.stringify(err, undefined, 2)); }//so if new: true; this callback parameter. will have the value of updated 
+                                                                                                //otherwise it will have the old value of the corresponding employee
+    });
+});
+
 
 //configure routes inside route file index.js
 module.exports = router;

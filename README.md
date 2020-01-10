@@ -27,3 +27,5 @@ whithout managed mongodb tools
 ## insert new employee record into the DB collection (post())
 
 ## more get request to return a specific empoyee with _ID
+
+## more routes for update operation
