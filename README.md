@@ -1,5 +1,5 @@
 ## DEMO
-![MEAN stack demo](https://github.com/ElongeR-12/mediaDatas/blob/main/medias/mean%20stack.gif)
+    ![MEANstackdemo](https://github.com/ElongeR-12/mediaDatas/blob/main/medias/mean%20stack.gif)
 ## start mongodb 
 $C:\Program Files\MongoDB\Server\4.2\bin>mongod.exe --dbpath c:\Users\rariv\mongo-data
 
